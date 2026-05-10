@@ -4,11 +4,27 @@ body {
     background: #f2f2f2;
 }
 
-
-header, footer {
+header,
+footer {
     background: #333;
     color: white;
     padding: 10px;
+}
+
+nav {
+    background: #444;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+nav a:hover {
+    text-decoration: underline;
 }
 
 section {
@@ -18,8 +34,9 @@ section {
     border: 1px solid #ccc;
 }
 
-h1, h2 {
-    margin: 0 0 10px 0;
+h1,
+h2 {
+    margin-bottom: 10px;
 }
 
 form {
@@ -28,7 +45,8 @@ form {
     border: 1px solid #ccc;
 }
 
-input, textarea {
+input,
+textarea {
     width: 100%;
     margin-bottom: 10px;
     padding: 5px;
@@ -38,4 +56,37 @@ input[type="submit"] {
     background: #333;
     color: white;
     border: none;
+    padding: 8px;
+}
+
+input[type="submit"]:hover {
+    background: #555;
+}
+
+.contenedor-proyectos {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.proyecto {
+    flex: 1;
+    min-width: 200px;
+    background: #eaeaea;
+    padding: 10px;
+    border: 1px solid #bbb;
+}
+
+.redes {
+    margin-top: 10px;
+}
+
+.redes a {
+    color: white;
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+.redes a:hover {
+    text-decoration: underline;
 }
