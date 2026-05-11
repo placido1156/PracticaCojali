@@ -2,9 +2,19 @@ body {
     font-family: Arial;
     margin: 20px;
     background: #f2f2f2;
+    color: black;
 }
 
-header,
+header {
+    background: #333;
+    color: white;
+    padding: 10px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 footer {
     background: #333;
     color: white;
@@ -15,21 +25,28 @@ nav {
     background: #444;
     padding: 10px;
     margin-bottom: 20px;
+
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    margin-right: 15px;
 }
 
 nav a:hover {
     text-decoration: underline;
 }
 
+main {
+    display: grid;
+    gap: 15px;
+}
+
 section {
     background: white;
-    margin-bottom: 15px;
     padding: 10px;
     border: 1px solid #ccc;
 }
@@ -50,16 +67,20 @@ textarea {
     width: 100%;
     margin-bottom: 10px;
     padding: 5px;
+    box-sizing: border-box;
 }
 
-input[type="submit"] {
+input[type="submit"],
+#boton-tema {
     background: #333;
     color: white;
     border: none;
     padding: 8px;
+    cursor: pointer;
 }
 
-input[type="submit"]:hover {
+input[type="submit"]:hover,
+#boton-tema:hover {
     background: #555;
 }
 
@@ -83,10 +104,49 @@ input[type="submit"]:hover {
 
 .redes a {
     color: white;
-    margin-right: 10px;
     text-decoration: none;
 }
 
 .redes a:hover {
     text-decoration: underline;
+}
+
+.oscuro {
+    background: #222;
+    color: white;
+}
+
+.oscuro section,
+.oscuro form {
+    background: #333;
+    color: white;
+    border: 1px solid #555;
+}
+
+.oscuro input,
+.oscuro textarea {
+    background: #444;
+    color: white;
+    border: 1px solid #666;
+}
+
+@media (max-width: 700px) {
+
+    body {
+        margin: 10px;
+    }
+
+    header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .contenedor-proyectos {
+        flex-direction: column;
+    }
+
+    nav {
+        flex-direction: column;
+    }
+
 }
