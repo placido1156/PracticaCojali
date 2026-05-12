@@ -98,6 +98,13 @@ input[type="submit"]:hover,
     border: 1px solid #bbb;
 }
 
+.estudio {
+    background: #eaeaea;
+    border: 1px solid #bbb;
+    padding: 10px;
+    margin-top: 10px;
+}
+
 .redes {
     margin-top: 10px;
 }
@@ -141,11 +148,11 @@ input[type="submit"]:hover,
         gap: 10px;
     }
 
-    .contenedor-proyectos {
+    nav {
         flex-direction: column;
     }
 
-    nav {
+    .contenedor-proyectos {
         flex-direction: column;
     }
 
