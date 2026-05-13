@@ -2,7 +2,9 @@
 <html lang="es">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Portfolio de Plácido Chinchilla</title>
@@ -10,6 +12,7 @@
     <link rel="stylesheet" href="estilos.css">
 
     <script defer src="app.js"></script>
+
 </head>
 
 <body>
@@ -25,12 +28,17 @@
 </header>
 
 <nav>
+
     <a href="#sobre-mi">Sobre mí</a>
-    <a href="#formacion">Formación</a>
+
     <a href="#habilidades">Habilidades</a>
-    <a href="#proyectos">Proyectos</a>
+
     <a href="#estudios">Estudios</a>
+
+    <a href="#github">GitHub</a>
+
     <a href="#contacto">Contacto</a>
+
 </nav>
 
 <main>
@@ -40,21 +48,9 @@
     <h2>Sobre mí</h2>
 
     <p>
-        Hola, me llamo Plácido Chinchilla, tengo 20 años y actualmente
-        estoy estudiando primero de DAW en el Gregorio Prieto.
+        Hola, me llamo Plácido Chinchilla, tengo 20 años y estudio
+        primero de DAW en el Gregorio Prieto.
     </p>
-
-</section>
-
-<section id="formacion">
-
-    <h2>Formación</h2>
-
-    <ul>
-        <li>Grado Superior en Desarrollo de Aplicaciones Web</li>
-        <li>IES Gregorio Prieto</li>
-        <li>2025 - Actualidad</li>
-    </ul>
 
 </section>
 
@@ -63,35 +59,14 @@
     <h2>Habilidades</h2>
 
     <ul>
+
         <li>HTML</li>
+
         <li>CSS básico</li>
+
         <li>JavaScript básico</li>
+
     </ul>
-
-</section>
-
-<section id="proyectos">
-
-    <h2>Proyectos</h2>
-
-    <div class="contenedor-proyectos">
-
-        <div class="proyecto">
-            <h3>Portfolio web</h3>
-            <p>Creación de un portfolio personal utilizando HTML y CSS.</p>
-        </div>
-
-        <div class="proyecto">
-            <h3>Prácticas de clase</h3>
-            <p>Realización de ejercicios de desarrollo web durante el curso.</p>
-        </div>
-
-        <div class="proyecto">
-            <h3>Proyecto futuro</h3>
-            <p>Desarrollar una página web más completa en el futuro.</p>
-        </div>
-
-    </div>
 
 </section>
 
@@ -101,13 +76,15 @@
 
     <form id="formulario-estudio">
 
-        <label>Nombre del estudio:</label><br>
-        <input type="text" id="nombre-estudio"><br>
+        <label>Nombre:</label>
 
-        <label>Centro:</label><br>
-        <input type="text" id="centro-estudio"><br>
+        <input type="text" id="nombre-estudio">
 
-        <input type="submit" value="Agregar estudio">
+        <label>Centro:</label>
+
+        <input type="text" id="centro-estudio">
+
+        <input type="submit" value="Agregar">
 
     </form>
 
@@ -115,11 +92,24 @@
 
 </section>
 
+<section id="github">
+
+    <h2>Repositorio</h2>
+
+    <button id="cargar-repo">
+        Mostrar repositorio
+    </button>
+
+    <div id="repo"></div>
+
+</section>
+
 <section id="contacto">
 
     <h2>Contacto</h2>
 
-    <p>Email: placido1156@example.com</p>
+    <p>Email: placido1156@gmail.com</p>
+
     <p>Teléfono: 680410838</p>
 
 </section>
@@ -129,14 +119,6 @@
 <footer>
 
     <p>© 2026 Plácido Chinchilla</p>
-
-    <div class="redes">
-
-        <a href="https://github.com/placido1156/PracticaCojali" target="_blank">
-            GitHub
-        </a>
-
-    </div>
 
 </footer>
 

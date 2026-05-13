@@ -1,159 +1,138 @@
 body {
+
     font-family: Arial;
+
     margin: 20px;
+
     background: #f2f2f2;
-    color: black;
+
 }
 
 header {
+
     background: #333;
+
     color: white;
+
     padding: 10px;
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
 footer {
+
     background: #333;
+
     color: white;
+
     padding: 10px;
+
+    margin-top: 20px;
+
 }
 
 nav {
+
     background: #444;
+
     padding: 10px;
+
     margin-bottom: 20px;
 
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
 }
 
 nav a {
+
     color: white;
+
     text-decoration: none;
-}
 
-nav a:hover {
-    text-decoration: underline;
-}
+    margin-right: 15px;
 
-main {
-    display: grid;
-    gap: 15px;
 }
 
 section {
+
     background: white;
+
     padding: 10px;
+
+    margin-bottom: 15px;
+
     border: 1px solid #ccc;
+
 }
 
-h1,
-h2 {
-    margin-bottom: 10px;
-}
+input {
 
-form {
-    background: white;
-    padding: 10px;
-    border: 1px solid #ccc;
-}
-
-input,
-textarea {
     width: 100%;
+
     margin-bottom: 10px;
+
     padding: 5px;
+
     box-sizing: border-box;
+
 }
 
-input[type="submit"],
-#boton-tema {
+button,
+input[type="submit"] {
+
     background: #333;
+
     color: white;
+
     border: none;
+
     padding: 8px;
+
     cursor: pointer;
-}
 
-input[type="submit"]:hover,
-#boton-tema:hover {
-    background: #555;
-}
-
-.contenedor-proyectos {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-.proyecto {
-    flex: 1;
-    min-width: 200px;
-    background: #eaeaea;
-    padding: 10px;
-    border: 1px solid #bbb;
 }
 
 .estudio {
+
     background: #eaeaea;
-    border: 1px solid #bbb;
+
     padding: 10px;
+
     margin-top: 10px;
+
 }
 
-.redes {
+.repo {
+
+    background: #eaeaea;
+
+    padding: 10px;
+
     margin-top: 10px;
-}
 
-.redes a {
-    color: white;
-    text-decoration: none;
-}
-
-.redes a:hover {
-    text-decoration: underline;
 }
 
 .oscuro {
+
     background: #222;
+
     color: white;
+
 }
 
-.oscuro section,
-.oscuro form {
+.oscuro section {
+
     background: #333;
-    color: white;
-    border: 1px solid #555;
-}
 
-.oscuro input,
-.oscuro textarea {
-    background: #444;
     color: white;
-    border: 1px solid #666;
+
 }
 
 @media (max-width: 700px) {
 
-    body {
-        margin: 10px;
-    }
+    nav a {
 
-    header {
-        flex-direction: column;
-        gap: 10px;
-    }
+        display: block;
 
-    nav {
-        flex-direction: column;
-    }
+        margin-bottom: 10px;
 
-    .contenedor-proyectos {
-        flex-direction: column;
     }
 
 }
