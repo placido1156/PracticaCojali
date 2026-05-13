@@ -1,20 +1,10 @@
 const botonTema = document.getElementById("boton-tema");
 
-if (localStorage.getItem("tema") === "oscuro") {
-    document.body.classList.add("oscuro");
-}
-
 botonTema.addEventListener("click", cambiarTema);
 
 function cambiarTema() {
 
     document.body.classList.toggle("oscuro");
-
-    if (document.body.classList.contains("oscuro")) {
-        localStorage.setItem("tema", "oscuro");
-    } else {
-        localStorage.setItem("tema", "claro");
-    }
 
 }
 
@@ -26,7 +16,7 @@ const estudios = [
     },
 
     {
-        nombre: "Bachillerato de Ciencias y Tecnología",
+        nombre: "Bachillerato Ciencias y Tecnología",
         centro: "IES Bernardo Balbuena"
     },
 
@@ -42,8 +32,6 @@ const formulario = document.getElementById("formulario-estudio");
 const listaEstudios = document.getElementById("lista-estudios");
 
 mostrarEstudios();
-
-formulario.addEventListener("submit", agregarEstudio);
 
 function mostrarEstudios() {
 
@@ -66,6 +54,8 @@ function mostrarEstudios() {
 
 }
 
+formulario.addEventListener("submit", agregarEstudio);
+
 function agregarEstudio(evento) {
 
     evento.preventDefault();
@@ -74,15 +64,38 @@ function agregarEstudio(evento) {
 
     const centro = document.getElementById("centro-estudio").value;
 
-    const nuevoEstudio = {
-        nombre: nombre,
-        centro: centro
-    };
+    estudios.push({
 
-    estudios.push(nuevoEstudio);
+        nombre: nombre,
+
+        centro: centro
+
+    });
 
     mostrarEstudios();
 
     formulario.reset();
+
+}
+
+const botonRepo = document.getElementById("cargar-repo");
+
+const repo = document.getElementById("repo");
+
+botonRepo.addEventListener("click", mostrarRepo);
+
+function mostrarRepo() {
+
+    repo.innerHTML = `
+        <div class="repo">
+
+            <p>PracticaCojali</p>
+
+            <a href="https://github.com/placido1156/PracticaCojali" target="_blank">
+                Abrir repositorio
+            </a>
+
+        </div>
+    `;
 
 }
