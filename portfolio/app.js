@@ -1,31 +1,53 @@
 const botonTema = document.getElementById("boton-tema");
 
+if (localStorage.getItem("tema") == "oscuro") {
+
+    document.body.classList.add("oscuro");
+
+}
+
 botonTema.addEventListener("click", cambiarTema);
 
 function cambiarTema() {
 
     document.body.classList.toggle("oscuro");
 
-}
+    if (document.body.classList.contains("oscuro")) {
 
-const estudios = [
+        localStorage.setItem("tema", "oscuro");
 
-    {
-        nombre: "Primaria y ESO",
-        centro: "Colegio Virgen de la Cabeza"
-    },
+    } else {
 
-    {
-        nombre: "Bachillerato Ciencias y Tecnología",
-        centro: "IES Bernardo Balbuena"
-    },
+        localStorage.setItem("tema", "claro");
 
-    {
-        nombre: "1º DAW (en proceso)",
-        centro: "IES Gregorio Prieto"
     }
 
-];
+}
+
+let estudios = JSON.parse(localStorage.getItem("estudios"));
+
+if (estudios == null) {
+
+    estudios = [
+
+        {
+            nombre: "Primaria y ESO",
+            centro: "Colegio Virgen de la Cabeza"
+        },
+
+        {
+            nombre: "Bachillerato Ciencias y Tecnología",
+            centro: "IES Bernardo Balbuena"
+        },
+
+        {
+            nombre: "1º DAW",
+            centro: "IES Gregorio Prieto"
+        }
+
+    ];
+
+}
 
 const formulario = document.getElementById("formulario-estudio");
 
@@ -33,11 +55,15 @@ const listaEstudios = document.getElementById("lista-estudios");
 
 mostrarEstudios();
 
+formulario.addEventListener("submit", agregarEstudio);
+
 function mostrarEstudios() {
 
     listaEstudios.innerHTML = "";
 
-    for (let estudio of estudios) {
+    for (let i = 0; i < estudios.length; i++) {
+
+        const estudio = estudios[i];
 
         const div = document.createElement("div");
 
@@ -46,6 +72,9 @@ function mostrarEstudios() {
         div.innerHTML = `
             <h3>${estudio.nombre}</h3>
             <p>${estudio.centro}</p>
+            <button onclick="eliminarEstudio(${i})">
+                Eliminar
+            </button>
         `;
 
         listaEstudios.appendChild(div);
@@ -53,8 +82,6 @@ function mostrarEstudios() {
     }
 
 }
-
-formulario.addEventListener("submit", agregarEstudio);
 
 function agregarEstudio(evento) {
 
@@ -72,30 +99,26 @@ function agregarEstudio(evento) {
 
     });
 
+    guardarDatos();
+
     mostrarEstudios();
 
     formulario.reset();
 
 }
 
-const botonRepo = document.getElementById("cargar-repo");
+function eliminarEstudio(indice) {
 
-const repo = document.getElementById("repo");
+    estudios.splice(indice, 1);
 
-botonRepo.addEventListener("click", mostrarRepo);
+    guardarDatos();
 
-function mostrarRepo() {
+    mostrarEstudios();
 
-    repo.innerHTML = `
-        <div class="repo">
+}
 
-            <p>PracticaCojali</p>
+function guardarDatos() {
 
-            <a href="https://github.com/placido1156/PracticaCojali" target="_blank">
-                Abrir repositorio
-            </a>
-
-        </div>
-    `;
+    localStorage.setItem("estudios", JSON.stringify(estudios));
 
 }
