@@ -71,7 +71,9 @@ function mostrarEstudios() {
 
         div.innerHTML = `
             <h3>${estudio.nombre}</h3>
+
             <p>${estudio.centro}</p>
+
             <button onclick="eliminarEstudio(${i})">
                 Eliminar
             </button>
@@ -120,5 +122,83 @@ function eliminarEstudio(indice) {
 function guardarDatos() {
 
     localStorage.setItem("estudios", JSON.stringify(estudios));
+
+}
+
+/* GITHUB API */
+
+const botonGithub = document.getElementById("buscar-github");
+
+const perfilGithub = document.getElementById("perfil-github");
+
+const repositorios = document.getElementById("repositorios");
+
+botonGithub.addEventListener("click", buscarGithub);
+
+function buscarGithub() {
+
+    const usuario = document.getElementById("usuario-github").value;
+
+    perfilGithub.innerHTML = "";
+
+    repositorios.innerHTML = "";
+
+    fetch("https://api.github.com/users/" + usuario)
+
+    .then(function(respuesta) {
+
+        return respuesta.json();
+
+    })
+
+    .then(function(datos) {
+
+        perfilGithub.innerHTML = `
+            <div class="estudio">
+
+                <h3>${datos.login}</h3>
+
+                <p>Repositorios públicos: ${datos.public_repos}</p>
+
+                <a href="${datos.html_url}" target="_blank">
+                    Ver perfil
+                </a>
+
+            </div>
+        `;
+
+    });
+
+    fetch("https://api.github.com/users/" + usuario + "/repos")
+
+    .then(function(respuesta) {
+
+        return respuesta.json();
+
+    })
+
+    .then(function(datos) {
+
+        for (let i = 0; i < datos.length; i++) {
+
+            const repo = datos[i];
+
+            const div = document.createElement("div");
+
+            div.classList.add("estudio");
+
+            div.innerHTML = `
+                <h3>${repo.name}</h3>
+
+                <a href="${repo.html_url}" target="_blank">
+                    Ver repositorio
+                </a>
+            `;
+
+            repositorios.appendChild(div);
+
+        }
+
+    });
 
 }
